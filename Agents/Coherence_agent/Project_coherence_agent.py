@@ -33,9 +33,9 @@ logger = logging.getLogger('CoherenceAgent')
 load_dotenv()
 
 # Initialize Gemini client
-gemini_api_key = os.getenv("GEMINI_API_KEY")
+gemini_api_key = os.getenv("MISTRAL_API_KEY")
 if not gemini_api_key:
-    raise ImportError("SET GEMINI_API_KEY ENV")
+    raise ImportError("SET MISTRAL_API_KEY ENV")
 
 client = AsyncOpenAI(
     api_key=os.getenv('MISTRAL_API_KEY'),  # Make sure to set this in your .env file
@@ -47,8 +47,6 @@ model_mistral = OpenAIChatCompletionsModel(
     model='mistral-large-latest',  # Mistral's latest large model
     openai_client=client
 )
-set_default_openai_client(client)
-set_tracing_disabled(True)
 
 def read_document(file_path: str) -> str:
     """Read document content based on file type"""

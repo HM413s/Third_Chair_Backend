@@ -42,8 +42,6 @@ model = OpenAIChatCompletionsModel(
     openai_client=client
 )
 
-set_default_openai_client(client)
-set_tracing_disabled(True)
 
 # Define the Firm Standard Agent
 firm_standard_agent = Agent[FirmStandardContext](
