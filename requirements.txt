@@ -62,7 +62,6 @@ pydantic_core
 pydantic-settings
 Pygments
 PyJWT
-pymilvus
 PyPDF2
 pytesseract
 python-dateutil
@@ -88,8 +87,9 @@ sse-starlette
 starlette
 tenacity
 threadpoolctl
-marshmallow>=3.13.0
-tqdm
+marshmallow==4.0.0
+environs>=10.0.0
+pymilvus>=2.4.0
 typer
 types-requests
 typing_extensions
