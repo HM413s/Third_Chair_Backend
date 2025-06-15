@@ -39,16 +39,16 @@ app = FastAPI(title="Third Chair Backend API",
 Base.metadata.create_all(bind=engine)
 
 # Get allowed origins from environment variable or use default
-ALLOWED_ORIGINS = os.getenv("ALLOWED_ORIGINS", "*").split(",")
-
-# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["https://third-chair.vercel.app"],
     allow_credentials=True,
-    allow_methods=["*"],
+    allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
     allow_headers=["*"],
+    expose_headers=["*"],
+    max_age=3600,
 )
+
 
 # Create uploads directory if it doesn't exist
 UPLOAD_DIR = os.getenv("UPLOAD_DIR", "uploads")
