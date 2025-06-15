@@ -88,6 +88,7 @@ sse-starlette
 starlette
 tenacity
 threadpoolctl
+marshmallow
 tqdm
 typer
 types-requests
