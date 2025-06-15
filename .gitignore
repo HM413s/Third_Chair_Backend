@@ -1,0 +1,17 @@
+# ================================
+# Node / React Frontend
+# ================================
+# Node modules
+
+.node_modules
+/node_modules
+.node_modules
+/__pycache__
+.__pycache__
+__pycache__
+.virtualenv
+
+.env
+/env
+/venv
+.venv
